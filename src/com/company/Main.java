@@ -6,5 +6,7 @@ public class Main {
 	// write your code here
         Game game = new Game("playstation");
         Prompter prompter = new Prompter(game);
+
+        prompter.displayProgress();
     }
 }

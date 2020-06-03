@@ -7,4 +7,8 @@ public class Prompter {
         this.game = game;
     }
 
+    public void displayProgress(){
+        System.out.println(game.getCurrentProgress());
+    }
+
 }
