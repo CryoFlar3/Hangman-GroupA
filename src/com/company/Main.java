@@ -7,6 +7,9 @@ public class Main {
         Game game = new Game("playstation");
         Prompter prompter = new Prompter(game);
 
-        prompter.displayProgress();
+        while (true) {
+            prompter.displayProgress();
+            prompter.promptForGuess();
+        }
     }
 }
