@@ -19,7 +19,7 @@ public class Prompter {
             String guessInput = scanner.nextLine();
 
             try {
-                isHit = game.applyGuess(guessInput.charAt(0));
+                isHit = game.applyGuess(guessInput);
                 isAcceptable = true;
             } catch (IllegalArgumentException iae){
                 System.out.printf("%s. Please try again. %n", iae.getMessage());
@@ -29,7 +29,15 @@ public class Prompter {
     }
 
     public void displayProgress(){
-        System.out.println(game.getCurrentProgress());
+        System.out.printf("You have %d tries left to solve: %s%n",game.getRemainingTries(), game.getCurrentProgress());
+    }
+
+    public void displayOutcome(){
+        if (game.isWon()){
+            System.out.printf("Congrats! You won with %d tries remaining!%n", game.getRemainingTries());
+        } else {
+            System.out.printf("Bummer. the correct answer was %s.%n", game.getAnswer());
+        }
     }
 
 }
